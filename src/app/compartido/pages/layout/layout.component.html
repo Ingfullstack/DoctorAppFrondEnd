@@ -1,0 +1,33 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav mode="push" #ocultar class="menu">
+        <mat-toolbar color="primary">
+        <span>Menu</span>
+        <span class="spacer"></span>
+        <button mat-icon-button (click)="ocultar.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        </mat-toolbar>
+        <mat-nav-list>
+            <mat-list-item (click)="ocultar.toggle()" [routerLink]="['/layout/dashboard']">
+                <mat-icon matListItemIcon>dashboard</mat-icon>
+                <span matListItemTitle>DashBoard</span>
+            </mat-list-item>
+            <mat-list-item (click)="ocultar.toggle()">
+                <mat-icon matListItemIcon>category</mat-icon>
+                <span matListItemTitle>Especialidades</span>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-toolbar color="primary">
+        <span>DoctorApp</span>
+        <button mat-icon-button (click)="ocultar.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span class="spacer"></span>
+        <span>{{username}}</span>
+        <button mat-icon-button (click)="cerrarSesion()">
+            <mat-icon>logout</mat-icon>
+        </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+</mat-sidenav-container>
